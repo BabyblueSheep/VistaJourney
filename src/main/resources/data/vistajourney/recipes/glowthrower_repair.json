@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    {
+      "item" : "vistajourney:glowthrower"
+    },
+    {
+      "item" : "minecraft:glow_ink_sac"
+    }
+  ],
+  "result": {
+    "item" : "vistajourney:glowthrower",
+    "count": 1
+  }
+}

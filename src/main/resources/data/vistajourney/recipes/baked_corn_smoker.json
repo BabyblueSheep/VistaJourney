@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "vistajourney:corn"
+  },
+  "result": "vistajourney:baked_corn",
+  "experience": 0.35,
+  "cookingtime": 100
+}

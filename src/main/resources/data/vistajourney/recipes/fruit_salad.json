@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients":
+  [
+    {
+      "item" : "minecraft:bowl"
+    },
+    {
+      "tag" : "vistajourney:fruit"
+    },
+    {
+      "tag" : "vistajourney:fruit"
+    },
+    {
+      "tag" : "vistajourney:fruit"
+    }
+  ],
+  "result": {
+    "item": "vistajourney:fruit_salad",
+    "count": 1
+  }
+}

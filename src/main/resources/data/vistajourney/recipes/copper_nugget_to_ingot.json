@@ -1,0 +1,38 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "copper_ingot",
+  "ingredients":
+  [
+    {
+      "item" : "vistajourney:copper_nugget"	
+    },
+    {
+      "item" : "vistajourney:copper_nugget"	
+    },
+    {
+      "item" : "vistajourney:copper_nugget"	
+    },
+    {
+      "item" : "vistajourney:copper_nugget"	
+    },
+    {
+      "item" : "vistajourney:copper_nugget"	
+    },
+    {
+      "item" : "vistajourney:copper_nugget"	
+    },
+    {
+      "item" : "vistajourney:copper_nugget"	
+    },
+    {
+      "item" : "vistajourney:copper_nugget"	
+    },
+    {
+      "item" : "vistajourney:copper_nugget"	
+    }
+  ],
+  "result": {
+    "item": "minecraft:copper_ingot",
+    "count": 1
+  }
+}
