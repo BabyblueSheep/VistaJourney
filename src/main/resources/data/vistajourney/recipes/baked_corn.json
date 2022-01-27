@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "vistajourney:corn"
+  },
+  "result": "vistajourney:baked_corn",
+  "experience": 0.35,
+  "cookingtime": 200
+}

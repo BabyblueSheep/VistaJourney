@@ -1,0 +1,29 @@
+{
+  "item.vistajourney.soullace.tooltip": "Soul Speed",
+  "item.vistajourney.phantom_cloak.tooltip": "See-through Form",
+
+  "item.vistajourney.copper_nugget": "Copper Nugget",
+  "item.vistajourney.plum": "Plum",
+  "item.vistajourney.kiwi": "Kiwi",
+  "item.vistajourney.glowthrower": "Glowthrower",
+  "item.vistajourney.aglet": "Aglet",
+  "item.vistajourney.soullace": "Soullace",
+  "item.vistajourney.corn": "Corn",
+  "item.vistajourney.baked_corn": "Baked Corn",
+  "item.vistajourney.phantom_cloak": "Phantom Cloak",
+  "item.vistajourney.ruby": "Ruby",
+  "item.vistajourney.opal": "Opal",
+  "item.vistajourney.fruit_salad": "Fruit Bowl",
+  "item.vistajourney.rooted_mycelium": "Rooted Mycelium",
+  "item.vistajourney.fungenile_spawn_egg": "Fungenile Spawn Egg",
+
+  "block.vistajourney.stone_brick_tiles": "Stone Brick Tiles",
+  "block.vistajourney.ruby_ore": "Ruby Ore",
+  "block.vistajourney.opal_ore": "Opal Ore",
+  "block.vistajourney.ruby_block": "Block of Ruby",
+  "block.vistajourney.violet_webcap": "Violet Wavecap Mushroom",
+  "block.vistajourney.violet_webcap_block": "Violet Wavecap Mushroom Block",
+  "block.vistajourney.violet_webcap_stem": "Violet Wavecap Mushroom Stem",
+
+  "entity.vistajourney.fungenile": "Fungenile"
+}

@@ -1,0 +1,21 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "vistajourney:item/glowthrower"
+  },
+    "overrides": [
+        {
+            "predicate": {
+                "pulling": 1
+            },
+            "model": "vistajourney:item/glowthrower_state1"
+        },
+        {
+            "predicate": {
+                "pulling": 1,
+                "pull": 0.8
+            },
+            "model": "vistajourney:item/glowthrower_state2"
+        }
+    ]
+}
