@@ -16,6 +16,7 @@
   "item.vistajourney.fruit_salad": "Fruit Bowl",
   "item.vistajourney.rooted_mycelium": "Rooted Mycelium",
   "item.vistajourney.fungenile_spawn_egg": "Fungenile Spawn Egg",
+  "item.minecraft.potion.effect.plague_potion": "Potion of the Plague",
 
   "block.vistajourney.stone_brick_tiles": "Stone Brick Tiles",
   "block.vistajourney.ruby_ore": "Ruby Ore",
@@ -24,6 +25,10 @@
   "block.vistajourney.violet_webcap": "Violet Wavecap Mushroom",
   "block.vistajourney.violet_webcap_block": "Violet Wavecap Mushroom Block",
   "block.vistajourney.violet_webcap_stem": "Violet Wavecap Mushroom Stem",
+  "block.vistajourney.deepslate_ruby_ore": "Deepslate Ruby Ore",
+  "block.vistajourney.deepslate_opal_ore": "Deepslate Opal Ore",
 
-  "entity.vistajourney.fungenile": "Fungenile"
+  "entity.vistajourney.fungenile": "Fungenile",
+
+  "effect.vistajourney.plague": "Plague"
 }

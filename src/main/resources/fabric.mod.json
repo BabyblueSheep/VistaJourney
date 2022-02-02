@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "Vista Journey",
-  "description": "This is an example description! Tell everyone what your mod is about! no",
+  "description": "A mod with a little for everything for your world.",
   "authors": [
     "BabyblueSheep"
   ],
@@ -32,9 +32,7 @@
     "fabricloader": ">=0.11.3",
     "fabric": "*",
     "minecraft": "1.18.x",
-    "java": ">=17",
-    "trinkets": ">=3.1.0"
-
+    "java": ">=17"
   },
   "suggests": {
     "another-mod": "*"

@@ -4,6 +4,9 @@
   "package": "babybluesheep.vistajourney.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "BrewingRecipeRegistryInvoker",
+    "BrewingRecipeRegistryMixin",
+    "PlayerEntityMixin"
   ],
   "client": [
   ],
