@@ -1,15 +1,18 @@
 package babybluesheep.vistajourney.entity;
 
-import babybluesheep.vistajourney.VistaJourney;
-import net.minecraft.entity.*;
-import net.minecraft.entity.ai.goal.*;
+import babybluesheep.vistajourney.registry.VistaItemRegistry;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.ai.goal.LookAroundGoal;
+import net.minecraft.entity.ai.goal.LookAtEntityGoal;
+import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.entity.passive.*;
+import net.minecraft.entity.passive.AnimalEntity;
+import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -92,7 +95,7 @@ public class Fungenile extends AnimalEntity implements IAnimatable {
         ItemStack itemStack = player.getStackInHand(hand);
         if (itemStack.isOf(Items.SHEARS)){
             if (!this.isSheared()) {
-                this.dropStack(new ItemStack(VistaJourney.ROOTED_MYCELIUM), 0.5F);
+                this.dropStack(new ItemStack(VistaItemRegistry.ROOTED_MYCELIUM), 0.5F);
                 this.setSheared(true);
             }
         }

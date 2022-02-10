@@ -9,7 +9,9 @@
     "BabyblueSheep"
   ],
   "contact": {
-    "sources": "https://github.com/BabyblueSheep/VistaJourney"
+    "homepage": "",
+    "sources": "https://github.com/BabyblueSheep/VistaJourney",
+    "issues": "https://github.com/BabyblueSheep/VistaJourney/issues"
   },
 
   "license": "MIT License",

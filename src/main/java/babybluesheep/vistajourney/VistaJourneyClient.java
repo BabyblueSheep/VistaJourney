@@ -2,6 +2,9 @@ package babybluesheep.vistajourney;
 
 import babybluesheep.vistajourney.client.render.FungenileRenderer;
 import babybluesheep.vistajourney.entity.EntitySpawnPacket;
+import babybluesheep.vistajourney.registry.VistaBlockRegistry;
+import babybluesheep.vistajourney.registry.VistaEntityRegistry;
+import babybluesheep.vistajourney.registry.VistaItemRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendereregistry.v1.EntityRendererRegistry;
@@ -24,25 +27,25 @@ public class VistaJourneyClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
-        BlockRenderLayerMap.INSTANCE.putBlock(VistaJourney.GLOW_GLOB, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(VistaJourney.VIOLET_WEBCAP, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(VistaBlockRegistry.GLOW_GLOB, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(VistaBlockRegistry.VIOLET_WEBCAP, RenderLayer.getCutout());
 
-        EntityRendererRegistry.INSTANCE.register(VistaJourney.GLOW_GLOB_THROWN_ENTITY_TYPE, (context) ->
+        EntityRendererRegistry.INSTANCE.register(VistaEntityRegistry.GLOW_GLOB_THROWN_ENTITY_TYPE, (context) ->
                 new FlyingItemEntityRenderer(context));
         receiveEntityPacket();
 
-        EntityRendererRegistry.INSTANCE.register(VistaJourney.FUNGENILE,
+        EntityRendererRegistry.INSTANCE.register(VistaEntityRegistry.FUNGENILE,
                 (entityRenderDispatcher) -> new FungenileRenderer(entityRenderDispatcher));
 
 
-        FabricModelPredicateProviderRegistry.register(VistaJourney.GLOWTHROWER, new Identifier("pull"), (itemStack, clientWorld, livingEntity, integer) -> {
+        FabricModelPredicateProviderRegistry.register(VistaItemRegistry.GLOWTHROWER, new Identifier("pull"), (itemStack, clientWorld, livingEntity, integer) -> {
             if (livingEntity == null) {
                 return 0.0F;
             }
             return livingEntity.getActiveItem() != itemStack ? 0.0F : (itemStack.getMaxUseTime() - livingEntity.getItemUseTimeLeft()) / 20.0F;
         });
 
-        FabricModelPredicateProviderRegistry.register(VistaJourney.GLOWTHROWER, new Identifier("pulling"), (itemStack, clientWorld, livingEntity, integer) -> {
+        FabricModelPredicateProviderRegistry.register(VistaItemRegistry.GLOWTHROWER, new Identifier("pulling"), (itemStack, clientWorld, livingEntity, integer) -> {
             if (livingEntity == null) {
                 return 0.0F;
             }

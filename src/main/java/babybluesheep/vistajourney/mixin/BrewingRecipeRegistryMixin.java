@@ -1,6 +1,7 @@
 package babybluesheep.vistajourney.mixin;
 
-import babybluesheep.vistajourney.VistaJourney;
+import babybluesheep.vistajourney.registry.VistaItemRegistry;
+import babybluesheep.vistajourney.registry.VistaPotionRegistry;
 import net.minecraft.potion.Potions;
 import net.minecraft.recipe.BrewingRecipeRegistry;
 import org.spongepowered.asm.mixin.Mixin;
@@ -13,6 +14,6 @@ public class BrewingRecipeRegistryMixin {
 
     @Inject(method = "registerDefaults", at = @At(value = "TAIL"))
     private static void registerDefaultsInject(CallbackInfo ci) {
-        BrewingRecipeRegistryInvoker.invokedRegisterPotionRecipe(Potions.AWKWARD, VistaJourney.ROOTED_MYCELIUM, VistaJourney.PLAGUE_POTION);
+        BrewingRecipeRegistryInvoker.invokedRegisterPotionRecipe(Potions.AWKWARD, VistaItemRegistry.ROOTED_MYCELIUM, VistaPotionRegistry.PLAGUE_POTION);
     }
 }

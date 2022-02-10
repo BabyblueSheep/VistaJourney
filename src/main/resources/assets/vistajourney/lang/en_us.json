@@ -1,22 +1,21 @@
 {
-  "item.vistajourney.soullace.tooltip": "Soul Speed",
-  "item.vistajourney.phantom_cloak.tooltip": "See-through Form",
+  "item.vistajourney.glowglob": "go away youre not meant to have this",
 
   "item.vistajourney.copper_nugget": "Copper Nugget",
   "item.vistajourney.plum": "Plum",
   "item.vistajourney.kiwi": "Kiwi",
   "item.vistajourney.glowthrower": "Glowthrower",
-  "item.vistajourney.aglet": "Aglet",
-  "item.vistajourney.soullace": "Soullace",
   "item.vistajourney.corn": "Corn",
   "item.vistajourney.baked_corn": "Baked Corn",
-  "item.vistajourney.phantom_cloak": "Phantom Cloak",
   "item.vistajourney.ruby": "Ruby",
   "item.vistajourney.opal": "Opal",
   "item.vistajourney.fruit_salad": "Fruit Bowl",
   "item.vistajourney.rooted_mycelium": "Rooted Mycelium",
   "item.vistajourney.fungenile_spawn_egg": "Fungenile Spawn Egg",
+
   "item.minecraft.potion.effect.plague_potion": "Potion of the Plague",
+  "item.minecraft.splash_potion.effect.plague_potion": "Splash Potion of the Plague",
+  "item.minecraft.lingering_potion.effect.plague_potion": "Lingering Potion of the Plague",
 
   "block.vistajourney.stone_brick_tiles": "Stone Brick Tiles",
   "block.vistajourney.ruby_ore": "Ruby Ore",
@@ -27,6 +26,9 @@
   "block.vistajourney.violet_webcap_stem": "Violet Wavecap Mushroom Stem",
   "block.vistajourney.deepslate_ruby_ore": "Deepslate Ruby Ore",
   "block.vistajourney.deepslate_opal_ore": "Deepslate Opal Ore",
+  "block.vistajourney.red_shroombricks": "Red Shroombricks",
+  "block.vistajourney.brown_shroombricks": "Brown Shroombricks",
+  "block.vistajourney.violet_shroombricks": "Violet Shroombricks",
 
   "entity.vistajourney.fungenile": "Fungenile",
 

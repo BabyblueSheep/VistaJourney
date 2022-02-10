@@ -6,13 +6,13 @@
       "item" : "minecraft:bowl"
     },
     {
-      "tag" : "vistajourney:fruit"
+      "tag" : "c:fruits"
     },
     {
-      "tag" : "vistajourney:fruit"
+      "tag" : "c:fruits"
     },
     {
-      "tag" : "vistajourney:fruit"
+      "tag" : "c:fruits"
     }
   ],
   "result": {

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "MB",
+    "BM"
+  ],
+  "key": {
+    "B": {
+      "item": "minecraft:brick"
+    },
+    "M": {
+      "item": "vistajourney:violet_webcap"
+    }
+  },
+  "result": {
+    "item": "vistajourney:violet_shroombricks",
+    "count": 1
+  }
+}

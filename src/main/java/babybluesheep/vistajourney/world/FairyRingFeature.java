@@ -1,18 +1,13 @@
 package babybluesheep.vistajourney.world;
 
-import babybluesheep.vistajourney.VistaJourney;
+import babybluesheep.vistajourney.registry.VistaBlockRegistry;
 import com.mojang.serialization.Codec;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Heightmap;
-import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
-
-import java.util.Random;
 
 public class FairyRingFeature extends Feature<DefaultFeatureConfig> {
     public FairyRingFeature(Codec<DefaultFeatureConfig> configCodec) {
@@ -28,8 +23,8 @@ public class FairyRingFeature extends Feature<DefaultFeatureConfig> {
             for (int z = -5; z <= 5; z = z + 1) {
                 BlockPos currentPos = new BlockPos(context.getOrigin().getX() + x, context.getOrigin().getY(), context.getOrigin().getZ() + z);
                 BlockPos topPos2 = context.getWorld().getTopPosition(Heightmap.Type.OCEAN_FLOOR_WG, currentPos);
-                if((x*x+(z*z) == 25) && context.getWorld().isAir(topPos2) && context.getWorld().getBlockState(topPos2.down()) == Blocks.GRASS_BLOCK.getDefaultState()) {
-                    context.getWorld().setBlockState(topPos2, VistaJourney.VIOLET_WEBCAP.getDefaultState(), 3);
+                if((x*x+(z*z) > 25*0.9 && x*x+(z*z) < 25*1.1) && context.getWorld().isAir(topPos2) && context.getWorld().getBlockState(topPos2.down()) == Blocks.GRASS_BLOCK.getDefaultState()) {
+                    context.getWorld().setBlockState(topPos2, VistaBlockRegistry.VIOLET_WEBCAP.getDefaultState(), 3);
                 }
             }
         }
