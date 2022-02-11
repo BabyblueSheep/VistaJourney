@@ -12,17 +12,6 @@ group = project.maven_group
 
 repositories {
 	maven {
-		name = "TerraformersMC"
-		url = "https://maven.terraformersmc.com/"
-	}
-	maven {
-		name = "Ladysnake Libs"
-		url = "https://ladysnake.jfrog.io/artifactory/mods"
-	}
-	maven {
-		url = "https://jitpack.io"
-	}
-	maven {
 		url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
 	}
 }
