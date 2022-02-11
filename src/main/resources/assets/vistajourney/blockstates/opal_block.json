@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "vistajourney:block/opal_block"
+    }
+  }
+}

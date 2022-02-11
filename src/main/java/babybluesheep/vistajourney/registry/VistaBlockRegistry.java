@@ -18,6 +18,7 @@ public class VistaBlockRegistry
     public static final Block RUBY_BLOCK = new Block(FabricBlockSettings.of(Material.METAL, MapColor.RED).requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL));
     public static final Block OPAL_ORE = new Block(FabricBlockSettings.of(Material.STONE).requiresTool().strength(3.0F, 3.0F));
     public static final Block DEEPSLATE_OPAL_ORE = new Block(FabricBlockSettings.of(Material.STONE).requiresTool().strength(4.5F, 3.0F).sounds(BlockSoundGroup.DEEPSLATE));
+    public static final Block OPAL_BLOCK = new Block(FabricBlockSettings.of(Material.METAL, MapColor.PINK).requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL));
 
     public static final Block STONE_BRICK_TILES = new Block(FabricBlockSettings.of(Material.STONE).requiresTool().strength(1.5F, 6.0F));
 
@@ -57,9 +58,13 @@ public class VistaBlockRegistry
         Registry.register(Registry.ITEM, new Identifier(VistaJourney.MOD_ID, "ruby_ore"), new BlockItem(RUBY_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
         Registry.register(Registry.BLOCK, new Identifier(VistaJourney.MOD_ID, "deepslate_ruby_ore"), DEEPSLATE_RUBY_ORE);
         Registry.register(Registry.ITEM, new Identifier(VistaJourney.MOD_ID, "deepslate_ruby_ore"), new BlockItem(DEEPSLATE_RUBY_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+        Registry.register(Registry.BLOCK, new Identifier(VistaJourney.MOD_ID, "ruby_block"), RUBY_BLOCK);
+        Registry.register(Registry.ITEM, new Identifier(VistaJourney.MOD_ID, "ruby_block"), new BlockItem(RUBY_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
         Registry.register(Registry.BLOCK, new Identifier(VistaJourney.MOD_ID, "opal_ore"), OPAL_ORE);
         Registry.register(Registry.ITEM, new Identifier(VistaJourney.MOD_ID, "opal_ore"), new BlockItem(OPAL_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
         Registry.register(Registry.BLOCK, new Identifier(VistaJourney.MOD_ID, "deepslate_opal_ore"), DEEPSLATE_OPAL_ORE);
         Registry.register(Registry.ITEM, new Identifier(VistaJourney.MOD_ID, "deepslate_opal_ore"), new BlockItem(DEEPSLATE_OPAL_ORE, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
+        Registry.register(Registry.BLOCK, new Identifier(VistaJourney.MOD_ID, "opal_block"), OPAL_BLOCK);
+        Registry.register(Registry.ITEM, new Identifier(VistaJourney.MOD_ID, "opal_block"), new BlockItem(OPAL_BLOCK, new FabricItemSettings().group(ItemGroup.BUILDING_BLOCKS)));
     }
 }

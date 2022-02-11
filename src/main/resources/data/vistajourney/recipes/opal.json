@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "vistajourney:opal_block"
+    }
+  ],
+  "result": {
+    "item": "vistajourney:opal",
+    "count": 9
+  }
+}

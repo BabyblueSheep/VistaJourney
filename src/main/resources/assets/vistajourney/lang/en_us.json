@@ -2,8 +2,6 @@
   "item.vistajourney.glowglob": "go away youre not meant to have this",
 
   "item.vistajourney.copper_nugget": "Copper Nugget",
-  "item.vistajourney.plum": "Plum",
-  "item.vistajourney.kiwi": "Kiwi",
   "item.vistajourney.glowthrower": "Glowthrower",
   "item.vistajourney.corn": "Corn",
   "item.vistajourney.baked_corn": "Baked Corn",
@@ -29,6 +27,7 @@
   "block.vistajourney.red_shroombricks": "Red Shroombricks",
   "block.vistajourney.brown_shroombricks": "Brown Shroombricks",
   "block.vistajourney.violet_shroombricks": "Violet Shroombricks",
+  "block.vistajourney.opal_block": "Block of Opal",
 
   "entity.vistajourney.fungenile": "Fungenile",
 

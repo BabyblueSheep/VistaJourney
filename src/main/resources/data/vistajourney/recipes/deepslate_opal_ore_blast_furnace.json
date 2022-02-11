@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "group": "ruby",
+  "ingredient": {
+    "item": "vistajourney:deepslate_opal_ore"
+  },
+  "result": "vistajourney:opal",
+  "experience": 1.0,
+  "cookingtime": 100
+}

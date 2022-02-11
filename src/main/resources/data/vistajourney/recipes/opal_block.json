@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "copper_ingot",
   "pattern": [
     "###",
     "###",
@@ -8,10 +7,10 @@
   ],
   "key": {
     "#": {
-      "item": "vistajourney:copper_nugget"
+      "item": "vistajourney:opal"
     }
   },
   "result": {
-    "item": "minecraft:copper_ingot"
+    "item": "vistajourney:opal_block"
   }
 }
