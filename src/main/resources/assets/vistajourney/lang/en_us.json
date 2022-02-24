@@ -10,6 +10,10 @@
   "item.vistajourney.fruit_salad": "Fruit Bowl",
   "item.vistajourney.rooted_mycelium": "Rooted Mycelium",
   "item.vistajourney.fungenile_spawn_egg": "Fungenile Spawn Egg",
+  "item.vistajourney.claymore": "Claymore",
+  "item.vistajourney.raw_shearwater": "Raw Shearwater",
+  "item.vistajourney.cooked_shearwater": "Cooked Shearwater",
+  "item.vistajourney.shearwater_spawn_egg": "Shearwater Spawn Egg",
 
   "item.minecraft.potion.effect.plague_potion": "Potion of the Plague",
   "item.minecraft.splash_potion.effect.plague_potion": "Splash Potion of the Plague",
@@ -30,6 +34,7 @@
   "block.vistajourney.opal_block": "Block of Opal",
 
   "entity.vistajourney.fungenile": "Fungenile",
+  "entity.vistajourney.shearwater": "Shearwater",
 
   "effect.vistajourney.plague": "Plague"
 }

@@ -1,6 +1,7 @@
 package babybluesheep.vistajourney;
 
 import babybluesheep.vistajourney.client.render.FungenileRenderer;
+import babybluesheep.vistajourney.client.render.ShearwaterRenderer;
 import babybluesheep.vistajourney.entity.EntitySpawnPacket;
 import babybluesheep.vistajourney.registry.VistaBlockRegistry;
 import babybluesheep.vistajourney.registry.VistaEntityRegistry;
@@ -36,6 +37,8 @@ public class VistaJourneyClient implements ClientModInitializer {
 
         EntityRendererRegistry.INSTANCE.register(VistaEntityRegistry.FUNGENILE,
                 (entityRenderDispatcher) -> new FungenileRenderer(entityRenderDispatcher));
+        EntityRendererRegistry.INSTANCE.register(VistaEntityRegistry.SHEARWATER,
+                (entityRenderDispatcher) -> new ShearwaterRenderer(entityRenderDispatcher));
 
 
         FabricModelPredicateProviderRegistry.register(VistaItemRegistry.GLOWTHROWER, new Identifier("pull"), (itemStack, clientWorld, livingEntity, integer) -> {

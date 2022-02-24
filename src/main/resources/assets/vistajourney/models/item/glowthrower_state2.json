@@ -1,5 +1,5 @@
 {
-  "parent": "item/generated",
+  "parent": "vistajourney:item/glowthrower",
   "textures": {
     "layer0": "vistajourney:item/glowthrower_state2"
   }

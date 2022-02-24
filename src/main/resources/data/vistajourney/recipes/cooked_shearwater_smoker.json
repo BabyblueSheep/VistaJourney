@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "vistajourney:raw_shearwater"
+  },
+  "result": "vistajourney:cooked_shearwater",
+  "experience": 0.35,
+  "cookingtime": 100
+}

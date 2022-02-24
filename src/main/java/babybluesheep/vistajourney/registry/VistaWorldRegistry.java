@@ -2,9 +2,12 @@ package babybluesheep.vistajourney.registry;
 
 import babybluesheep.vistajourney.VistaJourney;
 import babybluesheep.vistajourney.world.FairyRingFeature;
+import babybluesheep.vistajourney.world.FairyRingGenerator;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
+import net.fabricmc.fabric.api.structure.v1.FabricStructureBuilder;
 import net.minecraft.block.MushroomBlock;
+import net.minecraft.structure.StructurePieceType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -32,9 +35,9 @@ public class VistaWorldRegistry {
     private static final PlacedFeature DEEPSLATE_OPAL_ORE_GENERATION_PLACE = DEEPSLATE_OPAL_ORE_GENERATION.withPlacement(CountPlacementModifier.of(20), SquarePlacementModifier.of(), HeightRangePlacementModifier.uniform(YOffset.fixed(-16), YOffset.fixed(96)));
     private static final PlacedFeature EXTRA_OPAL_ORE_GENERATION_PLACE = OPAL_ORE_GENERATION.withPlacement(CountPlacementModifier.of(5), SquarePlacementModifier.of(), HeightRangePlacementModifier.uniform(YOffset.fixed(32), YOffset.fixed(48)));
 
-    private static final Feature<DefaultFeatureConfig> FAIRY_RING_FEATURE = new FairyRingFeature(DefaultFeatureConfig.CODEC);
-    private static final ConfiguredFeature<?, ?> FAIRY_RING_CONFIG = FAIRY_RING_FEATURE.configure(new DefaultFeatureConfig());
-    private static final PlacedFeature FAIRY_RING_PLACED_FEATURE = FAIRY_RING_CONFIG.withPlacement(RarityFilterPlacementModifier.of(100), SquarePlacementModifier.of(), PlacedFeatures.WORLD_SURFACE_WG_HEIGHTMAP, CountPlacementModifier.of(1));
+    public static final StructurePieceType FAIRY_RING_PIECE = FairyRingGenerator.Piece::new;
+    public static final StructureFeature<DefaultFeatureConfig> FAIRY_RING_FEATURE = new FairyRingFeature(DefaultFeatureConfig.CODEC);
+    public static final ConfiguredStructureFeature<?, ?> FAIRY_RING_CONFIG = FAIRY_RING_FEATURE.configure(DefaultFeatureConfig.DEFAULT);
 
     public static final Feature<HugeMushroomFeatureConfig> HUGE_VIOLET_WEBCAP = new HugeRedMushroomFeature(HugeMushroomFeatureConfig.CODEC);
     public static final ConfiguredFeature<?, ?> HUGE_VIOLET_WEBCAP_CONFIG = HUGE_VIOLET_WEBCAP.configure(new HugeMushroomFeatureConfig(BlockStateProvider.of(VistaBlockRegistry.VIOLET_WEBCAP_BLOCK.getDefaultState().with(MushroomBlock.DOWN, false)), BlockStateProvider.of(VistaBlockRegistry.VIOLET_WEBCAP_STEM.getDefaultState().with(MushroomBlock.UP, false).with(MushroomBlock.DOWN, false)), 1));
@@ -60,10 +63,17 @@ public class VistaWorldRegistry {
         Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(VistaJourney.MOD_ID, "extra_opal_ore_generation"), EXTRA_OPAL_ORE_GENERATION_PLACE);
         BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.ICY), GenerationStep.Feature.UNDERGROUND_ORES, RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(VistaJourney.MOD_ID, "extra_opal_ore_generation")));
 
-        Registry.register(Registry.FEATURE, new Identifier(VistaJourney.MOD_ID, "fairy_ring_feature"), FAIRY_RING_FEATURE);
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(VistaJourney.MOD_ID, "fairy_ring_feature"), FAIRY_RING_CONFIG);
-        Registry.register(BuiltinRegistries.PLACED_FEATURE, new Identifier(VistaJourney.MOD_ID, "fairy_ring_feature"), FAIRY_RING_PLACED_FEATURE);
-        BiomeModifications.addFeature(BiomeSelectors.categories(Biome.Category.PLAINS, Biome.Category.FOREST), GenerationStep.Feature.UNDERGROUND_ORES, RegistryKey.of(Registry.PLACED_FEATURE_KEY, new Identifier(VistaJourney.MOD_ID, "fairy_ring_feature")));
+        Registry.register(Registry.STRUCTURE_PIECE, new Identifier(VistaJourney.MOD_ID, "fairy_ring_piece"), FAIRY_RING_PIECE);
+        FabricStructureBuilder.create(new Identifier(VistaJourney.MOD_ID, "fairy_ring_structure"), FAIRY_RING_FEATURE)
+                .step(GenerationStep.Feature.SURFACE_STRUCTURES)
+                .defaultConfig(66, 15, 65001)
+                .adjustsSurface()
+                .register();
+        RegistryKey<ConfiguredStructureFeature<?, ?>> fairyRingConfigure = RegistryKey.of(Registry.CONFIGURED_STRUCTURE_FEATURE_KEY,
+                new Identifier(VistaJourney.MOD_ID, "fairy_ring_structure"));
+        BuiltinRegistries.add(BuiltinRegistries.CONFIGURED_STRUCTURE_FEATURE, fairyRingConfigure.getValue(), FAIRY_RING_CONFIG);
+
+        BiomeModifications.addStructure(BiomeSelectors.categories(Biome.Category.PLAINS, Biome.Category.FOREST), fairyRingConfigure);
 
         Registry.register(Registry.FEATURE, new Identifier(VistaJourney.MOD_ID, "huge_violet_webcap"), HUGE_VIOLET_WEBCAP);
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, new Identifier(VistaJourney.MOD_ID, "huge_violet_webcap"), HUGE_VIOLET_WEBCAP_CONFIG);
