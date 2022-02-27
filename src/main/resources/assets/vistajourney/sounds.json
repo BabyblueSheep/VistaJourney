@@ -1,0 +1,23 @@
+{
+  "shearwater.idle": {
+    "subtitle": "subtitles.vistajourney.ambient",
+    "sounds": [
+      "vistajourney:shearwater/idle1",
+      "vistajourney:shearwater/idle2",
+      "vistajourney:shearwater/idle3"
+    ]
+  },
+  "shearwater.hurt": {
+    "subtitle": "subtitles.vistajourney.hurt",
+    "sounds": [
+      "vistajourney:shearwater/hurt1",
+      "vistajourney:shearwater/hurt2"
+    ]
+  },
+  "shearwater.death": {
+    "subtitle": "subtitles.vistajourney.death",
+    "sounds": [
+      "vistajourney:shearwater/death1"
+    ]
+  }
+}

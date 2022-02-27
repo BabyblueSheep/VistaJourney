@@ -15,7 +15,7 @@ public class ShearwaterRenderer extends GeoEntityRenderer<Shearwater>
     public ShearwaterRenderer(EntityRendererFactory.Context renderManager)
     {
         super(renderManager, new ShearwaterModel());
-        this.shadowRadius  = 0.3F; //change 0.7 to the desired shadow size.
+        this.shadowRadius  = 0.5F;
     }
 
     @Override

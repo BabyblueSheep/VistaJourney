@@ -24,7 +24,7 @@ import java.util.UUID;
 
 public class VistaJourneyClient implements ClientModInitializer {
 
-    public static final Identifier PacketID = new Identifier("vistajourney", "spawn_packet");
+    public static final Identifier PacketID = new Identifier(VistaJourney.MOD_ID, "spawn_packet");
 
     @Override
     public void onInitializeClient() {
@@ -32,6 +32,10 @@ public class VistaJourneyClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(VistaBlockRegistry.VIOLET_WEBCAP, RenderLayer.getCutout());
 
         EntityRendererRegistry.INSTANCE.register(VistaEntityRegistry.GLOW_GLOB_THROWN_ENTITY_TYPE, (context) ->
+                new FlyingItemEntityRenderer(context));
+        receiveEntityPacket();
+
+        EntityRendererRegistry.INSTANCE.register(VistaEntityRegistry.SHEARWATER_EGG_THROWN_ENTITY_TYPE, (context) ->
                 new FlyingItemEntityRenderer(context));
         receiveEntityPacket();
 

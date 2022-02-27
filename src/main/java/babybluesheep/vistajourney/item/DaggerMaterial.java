@@ -3,12 +3,12 @@ package babybluesheep.vistajourney.item;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class ClaymoreMaterial implements ToolMaterial {
+public class DaggerMaterial implements ToolMaterial {
     public static final ClaymoreMaterial INSTANCE = new ClaymoreMaterial();
 
     @Override
     public int getDurability() {
-        return 1279;
+        return 378;
     }
     @Override
     public float getMiningSpeedMultiplier() {

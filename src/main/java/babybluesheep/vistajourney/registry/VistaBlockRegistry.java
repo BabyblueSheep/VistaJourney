@@ -26,7 +26,6 @@ public class VistaBlockRegistry
     public static final Block BROWN_SHROOMBRICKS = new Block(FabricBlockSettings.of(Material.STONE, MapColor.BROWN).requiresTool().strength(2.0F, 6.0F));
     public static final Block VIOLET_SHROOMBRICKS = new Block(FabricBlockSettings.of(Material.STONE, MapColor.TERRACOTTA_PURPLE).requiresTool().strength(2.0F, 6.0F));
 
-
     public static final MushroomBlock VIOLET_WEBCAP_BLOCK = new MushroomBlock(FabricBlockSettings.of(Material.WOOD, MapColor.TERRACOTTA_PURPLE).strength(0.2F).sounds(BlockSoundGroup.WOOD));
     public static final MushroomBlock VIOLET_WEBCAP_STEM = new MushroomBlock(FabricBlockSettings.of(Material.WOOD, MapColor.GRAY).strength(0.2F).sounds(BlockSoundGroup.WOOD));
     public static final MushroomPlantBlock VIOLET_WEBCAP = new MushroomPlantBlock(FabricBlockSettings.of(Material.PLANT, MapColor.GRAY).noCollision().ticksRandomly().breakInstantly().sounds(BlockSoundGroup.GRASS), () -> VistaWorldRegistry.HUGE_VIOLET_WEBCAP_CONFIG);

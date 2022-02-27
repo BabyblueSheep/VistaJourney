@@ -1,6 +1,9 @@
 package babybluesheep.vistajourney.entity;
 
 import babybluesheep.vistajourney.registry.VistaEntityRegistry;
+import babybluesheep.vistajourney.registry.VistaItemRegistry;
+import babybluesheep.vistajourney.registry.VistaSoundRegistry;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -12,8 +15,12 @@ import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -26,12 +33,15 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class Shearwater extends AnimalEntity implements IAnimatable {
 
+    public int eggLayTime;
+
     private final AnimationFactory factory = new AnimationFactory(this);
 
     private static final Ingredient BreedingIngredient;
 
     public Shearwater(EntityType<? extends AnimalEntity> entityType, World world) {
         super(entityType, world);
+        this.eggLayTime = this.random.nextInt(6000) + 6000;
         this.ignoreCameraFrustum = true;
     }
 
@@ -64,14 +74,50 @@ public class Shearwater extends AnimalEntity implements IAnimatable {
 
     public void tickMovement() {
         super.tickMovement();
+
         Vec3d entityVector = this.getVelocity();
         if (!this.onGround && entityVector.y < 0.0D) {
             this.setVelocity(entityVector.multiply(1.0D, 0.6D, 1.0D));
         }
+
+        if (!this.world.isClient && this.isAlive() && !this.isBaby() && --this.eggLayTime <= 0) {
+            this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.random.nextFloat() - this.random.nextFloat()) * 0.2F + 1.0F);
+            this.dropItem(VistaItemRegistry.SHEARWATER_EGG);
+            this.eggLayTime = this.random.nextInt(6000) + 6000;
+        }
+    }
+
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        super.readCustomDataFromNbt(nbt);
+        if (nbt.contains("EggLayTime")) {
+            this.eggLayTime = nbt.getInt("EggLayTime");
+        }
+
+    }
+
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        nbt.putInt("EggLayTime", this.eggLayTime);
     }
 
     public boolean isBreedingItem(ItemStack stack) {
         return BreedingIngredient.test(stack);
+    }
+
+    protected SoundEvent getAmbientSound() {
+        return VistaSoundRegistry.SHEARWATER_IDLE_SOUND;
+    }
+
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return VistaSoundRegistry.SHEARWATER_HURT_SOUND;
+    }
+
+    protected SoundEvent getDeathSound() {
+        return VistaSoundRegistry.SHEARWATER_DEATH_SOUND;
+    }
+
+    protected void playStepSound(BlockPos pos, BlockState state) {
+        this.playSound(SoundEvents.ENTITY_CHICKEN_STEP, 0.15F, 1.0F);
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event)

@@ -3,7 +3,7 @@ package babybluesheep.vistajourney.item;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class ClaymoreMaterial implements ToolMaterial {
+public class SickleMaterial implements ToolMaterial {
     public static final ClaymoreMaterial INSTANCE = new ClaymoreMaterial();
 
     @Override

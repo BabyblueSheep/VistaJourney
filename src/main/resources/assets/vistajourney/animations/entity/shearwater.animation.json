@@ -34,7 +34,7 @@
 						"vector": [
 			  			0,
 			  			0,
-			  			"math.sin(query.anim_time*75*query.actor_count)*50"
+			  			"math.sin(query.anim_time*55*query.actor_count)*50"
 						]
 		  			}
 				},
@@ -43,7 +43,7 @@
 						"vector": [
 			  			0,
 			  			0,
-			  			"math.cos(query.anim_time*75*query.actor_count)*-50"
+			  			"math.cos(query.anim_time*55*query.actor_count)*-50"
 						]
 		  			}
 				}

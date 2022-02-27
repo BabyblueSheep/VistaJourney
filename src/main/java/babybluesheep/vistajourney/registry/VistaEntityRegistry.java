@@ -3,6 +3,7 @@ package babybluesheep.vistajourney.registry;
 import babybluesheep.vistajourney.entity.Fungenile;
 import babybluesheep.vistajourney.entity.GlowGlobThrown;
 import babybluesheep.vistajourney.entity.Shearwater;
+import babybluesheep.vistajourney.entity.ShearwaterEggThrown;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -24,6 +25,15 @@ public class VistaEntityRegistry {
                     .build()
     );
 
+    public static final EntityType<ShearwaterEggThrown> SHEARWATER_EGG_THROWN_ENTITY_TYPE = Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier("vistajourney", "shearwater_egg_thrown"),
+            FabricEntityTypeBuilder.<ShearwaterEggThrown>create(SpawnGroup.MISC, ShearwaterEggThrown::new)
+                    .dimensions(EntityDimensions.fixed(0.25F, 0.25F))
+                    .trackRangeBlocks(4).trackedUpdateRate(10)
+                    .build()
+    );
+
     public static final EntityType<Fungenile> FUNGENILE = Registry.register(
             Registry.ENTITY_TYPE,
             new Identifier("vistajourney", "fungenile"),
@@ -38,7 +48,8 @@ public class VistaEntityRegistry {
     public static void registerEntities()
     {
         FabricDefaultAttributeRegistry.register(FUNGENILE, Fungenile.createFungenileAttributes());
+        BiomeModifications.addSpawn(BiomeSelectors.categories(Biome.Category.MUSHROOM), SpawnGroup.AMBIENT, FUNGENILE, 15, 0, 1);
         FabricDefaultAttributeRegistry.register(SHEARWATER, Shearwater.createShearwaterAttributes());
-        BiomeModifications.addSpawn(BiomeSelectors.categories(Biome.Category.MUSHROOM), SpawnGroup.CREATURE, FUNGENILE, 15, 0, 1);
+        BiomeModifications.addSpawn(BiomeSelectors.categories(Biome.Category.BEACH), SpawnGroup.CREATURE, SHEARWATER, 25, 4, 8);
     }
 }
