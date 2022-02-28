@@ -6,7 +6,8 @@
   "mixins": [
     "BrewingRecipeRegistryInvoker",
     "BrewingRecipeRegistryMixin",
-    "PlayerEntityMixin"
+    "PlayerEntityMixin",
+    "LivingEntityMixin"
   ],
   "client": [
   ],

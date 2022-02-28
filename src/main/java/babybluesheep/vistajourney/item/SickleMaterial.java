@@ -1,5 +1,6 @@
 package babybluesheep.vistajourney.item;
 
+import babybluesheep.vistajourney.registry.VistaItemRegistry;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
@@ -29,7 +30,7 @@ public class SickleMaterial implements ToolMaterial {
     }
     @Override
     public Ingredient getRepairIngredient() {
-        return null;
+        return Ingredient.ofItems(VistaItemRegistry.GLOW_GLOB_ITEM);
     }
 
 }

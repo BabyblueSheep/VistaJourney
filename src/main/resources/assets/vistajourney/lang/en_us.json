@@ -40,8 +40,11 @@
   "entity.vistajourney.shearwater": "Shearwater",
 
   "effect.vistajourney.plague": "Plague",
+  "effect.vistajourney.bleeding": "Bleeding",
 
   "subtitles.vistajourney.ambient": "Shearwater wheezes",
   "subtitles.vistajourney.hurt": "Shearwater hurts",
-  "subtitles.vistajourney.death": "Shearwater dies"
+  "subtitles.vistajourney.death": "Shearwater dies",
+  
+  "enchantment.vistajourney.bleeding_enchantment": "Bleeding"
 }
